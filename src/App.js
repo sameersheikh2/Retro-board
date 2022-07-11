@@ -7,7 +7,7 @@ import "./App.css";
 
 function App(props) {
   const [items, setItems] = useState([]);
-  const [qitems, setQitems] = useState([]);
+  const [goodPoints, setGoodPoints] = useState([]);
 
   const improvementDataHandler = (data) => {
     setItems((prevItems) => {
@@ -15,8 +15,8 @@ function App(props) {
     });
   };
   const qualitiesDataHandler = (qdata) => {
-    setQitems((prevQitems) => {
-      return [...prevQitems, qdata];
+    setGoodPoints((prevGoodPoints) => {
+      return [...prevGoodPoints, qdata];
     });
   };
 
@@ -26,12 +26,21 @@ function App(props) {
     });
   };
 
+  const goodPoinDeleteHander = (impId) => {
+    setGoodPoints((prevGoodPoints) => {
+      return prevGoodPoints.filter((items) => items.id !== impId);
+    });
+  };
+
   return (
     <React.Fragment>
       <div className="main-container">
         <div className="sec-container">
           <GoodPointInput onAdd={qualitiesDataHandler} />
-          <GoodPointList qdata={qitems} />
+          <GoodPointList
+            goodpointItem={goodPoints}
+            onRemove={goodPoinDeleteHander}
+          />
         </div>
         <div className="first-container">
           <ImprovementInput onAdd={improvementDataHandler} />

@@ -5,8 +5,8 @@ import "./GoodPointList.css";
 const GoodPointList = (props) => {
   return (
     <ul className="q--goal-list">
-      {props.qdata.map((items) => (
-        <QualitiesItem key={items.id} id={items.id}>
+      {props.goodpointItem.map((items) => (
+        <QualitiesItem key={items.id} id={items.id} onRemove={props.onRemove}>
           {items.title}
           <br />
         </QualitiesItem>
