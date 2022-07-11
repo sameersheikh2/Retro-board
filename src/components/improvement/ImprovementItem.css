@@ -17,3 +17,7 @@
     font-weight: bold;
     font-size: 15px;
 }
+
+.delete--btn:hover{
+    background-color: red;
+}

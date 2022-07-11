@@ -30,13 +30,9 @@ const ImprovementInput = (props) => {
 
   return (
     <React.Fragment>
-        <div className="i--conainer">
-
-      <h2 className="heading">What didn't went well<button onClick={onAddHandler} className="add--btn">
+      <h2 className="heading">What didn't go well<button onClick={onAddHandler} className="add--btn">
         +
-      </button></h2>
-        </div>
-      
+      </button></h2>      
       {add && (
         <form onSubmit={submitHandler} className="input--form">
           <input type="text" value={input} onChange={inputHandler} required />
