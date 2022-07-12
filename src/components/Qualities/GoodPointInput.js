@@ -22,6 +22,7 @@ const GoodPointInput = (props) => {
     const data = {
       id: Math.random(),
       title: qinput,
+      value: 0,
     };
     props.onAdd(data);
     setQinput("");

@@ -6,7 +6,7 @@ const GoodPointList = (props) => {
   return (
     <ul className="q--goal-list">
       {props.goodpointItem.map((items) => (
-        <QualitiesItem key={items.id} id={items.id} onRemove={props.onRemove}>
+        <QualitiesItem key={items.id} id={items.id} value={items.value} onRemove={props.onRemove}>
           {items.title}
           <br />
         </QualitiesItem>

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import "./GoodPointItem.css";
 
 const GoodPointItem = (props) => {
-  const [upvote, setUpvote] = useState(0);
+  const value = props.value;
+  const [upvote, setUpvote] = useState(value);
 
   const upvoteHandler = () => {
     setUpvote((prevUpvote) => prevUpvote + 1);
   };
+  console.log(upvote)
 
   const removeDataHandler = () => {
     props.onRemove(props.id);
@@ -15,7 +17,7 @@ const GoodPointItem = (props) => {
   return (
     <>
       <li className="q--goal-item">
-        <div>{props.children}</div>
+        {props.children}
         <button onClick={upvoteHandler}>+{upvote}</button>
         <button onClick={removeDataHandler}>Delete</button>
       </li>
