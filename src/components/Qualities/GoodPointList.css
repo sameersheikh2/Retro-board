@@ -1,11 +1,10 @@
 .q--goal-list{
-    list-style: none;
     margin: 0;
     padding: 1rem;
     width: 100%;
     color: white;
     display: flex;
     flex-direction: row;
+    list-style: none;
     flex-wrap: wrap;
 }
-
