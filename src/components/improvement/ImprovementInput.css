@@ -1,3 +1,7 @@
+.heading-div{
+    display: flex;
+    flex-direction: column;
+}
 
 .heading{
     display: inline;

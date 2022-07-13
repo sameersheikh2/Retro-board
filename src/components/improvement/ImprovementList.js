@@ -4,7 +4,9 @@ import "./ImprovementList.css";
 
 const ImprovementList = (props) => {
   return (
-    <ul className="goal-list">
+    <React.Fragment>
+    <div className="goal-list">
+    <ul >
       {props.data.map((items) => (
         <ImprovementItem key={items.id} id={items.id} onDelete={props.onDelete}>
           {items.title}
@@ -12,6 +14,8 @@ const ImprovementList = (props) => {
         </ImprovementItem>
       ))}
     </ul>
+    </div>
+    </React.Fragment>
   );
 };
 

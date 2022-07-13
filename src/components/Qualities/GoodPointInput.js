@@ -13,6 +13,7 @@ const GoodPointInput = (props) => {
     setAdd(!add);
   };
 
+
   const SubmitHandler = (e) => {
     e.preventDefault();
 
@@ -30,7 +31,7 @@ const GoodPointInput = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <div className="heading--div">
       <h2 className="q--heading">
         What went well
         <button onClick={onAddHandler} className="q--add--btn">
@@ -45,7 +46,7 @@ const GoodPointInput = (props) => {
           <button >Add</button>
         </form>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 

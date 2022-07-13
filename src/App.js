@@ -9,11 +9,13 @@ function App(props) {
   const [items, setItems] = useState([]);
   const [goodPoints, setGoodPoints] = useState([]);
 
+
   const improvementDataHandler = (data) => {
     setItems((prevItems) => {
       return [...prevItems, data];
     });
   };
+  
   const qualitiesDataHandler = (qdata) => {
     setGoodPoints((prevGoodPoints) => {
       return [...prevGoodPoints, qdata];
@@ -34,16 +36,18 @@ function App(props) {
 
   return (
     <React.Fragment>
+      <header className="header-container">
+          <GoodPointInput onAdd={qualitiesDataHandler} />
+          <ImprovementInput onAdd={improvementDataHandler} />
+      </header>
       <div className="main-container">
         <div className="sec-container">
-          <GoodPointInput onAdd={qualitiesDataHandler} />
           <GoodPointList
             goodpointItem={goodPoints}
             onRemove={goodPoinDeleteHander}
           />
         </div>
         <div className="first-container">
-          <ImprovementInput onAdd={improvementDataHandler} />
           <ImprovementList data={items} onDelete={deleteHander} />
         </div>
       </div>

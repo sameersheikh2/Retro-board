@@ -1,17 +1,14 @@
 .goal-list{
-    display: flex;
+    margin: 0;
+    padding: 1rem;
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: center;
-    list-style: none;
-    color: white;    
 }
 
 .goal-list ul{
-    margin: 0;
-    padding: 1rem;
+    color: white;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    width: 100%;
 }
-

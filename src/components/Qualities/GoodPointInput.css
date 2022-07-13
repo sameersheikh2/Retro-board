@@ -4,6 +4,11 @@
     padding-top: 1rem;
 }
 
+.heading--div{
+    display: flex;
+    flex-direction:column ;
+}
+
 .q--add--btn{
     margin: 5px;
     border-radius: 20px;

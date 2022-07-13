@@ -29,7 +29,7 @@ const ImprovementInput = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <div className="heading-div">
       <h2 className="heading">What didn't go well<button onClick={onAddHandler} className="add--btn">
         +
       </button></h2>      
@@ -40,7 +40,7 @@ const ImprovementInput = (props) => {
           <button >Add</button>
         </form>
       )}
-    </React.Fragment>
+      </div>
   );
 };
 
