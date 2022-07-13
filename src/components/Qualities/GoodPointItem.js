@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import "./GoodPointItem.css";
 
 const GoodPointItem = (props) => {
   const value = props.value;
   const [upvote, setUpvote] = useState(value);
+  // const [sortValue , setSortValue] = useState(props.onSelected)
 
+  console.log(props.onSelected)
+  console.log(props.items)
 
   const upvoteHandler = () => {
     setUpvote((prevUpvote) => prevUpvote + 1);
