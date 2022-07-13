@@ -3,16 +3,12 @@ import QualitiesItem from "./GoodPointItem";
 import "./GoodPointList.css";
 
 const GoodPointList = (props) => {
-  // const [selectedOption , setSelectedOption] = useState('')
 
-  // const sortHandler =(e) =>{
-  //   setSelectedOption(e.target.value)
-  // }
-
+ 
   return (
     <React.Fragment>
 <div className='goal--list'>
-      {/* <select onChange={sortHandler}>
+      {/* <select >
         <option selected disabled>sort by</option>
         <option value='high'>Upvote (high-low)</option>
         <option value='low'>Upvote (low-high)</option>
@@ -24,7 +20,6 @@ const GoodPointList = (props) => {
             id={items.id}
             value={items.value}
             onRemove={props.onRemove}
-            // onSelected={selectedOption}
           >
             {items.title}
             <br />

@@ -5,6 +5,7 @@ const GoodPointItem = (props) => {
   const value = props.value;
   const [upvote, setUpvote] = useState(value);
 
+
   const upvoteHandler = () => {
     setUpvote((prevUpvote) => prevUpvote + 1);
   };
