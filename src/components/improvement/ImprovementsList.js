@@ -3,8 +3,17 @@ import Input from "../UI/Input";
 
 const ImprovementList = () => {
   const [showInput, setShowInput] = useState(false);
+  const [data, setData] = useState([]);
+
   const showInputHandler = () => {
     setShowInput(!showInput);
+  };
+
+  const dataHandler = (data) => {
+    setShowInput(false);
+    setData((prevData) => {
+      return [...prevData, data];
+    });
   };
 
   return (
@@ -15,7 +24,7 @@ const ImprovementList = () => {
           +
         </button>
       </h2>
-      {showInput && <Input />}
+      {showInput && <Input onGetData={dataHandler}/>}
       <ul className="improve--list"></ul>
     </>
   );
