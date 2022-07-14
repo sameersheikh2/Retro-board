@@ -1,7 +1,12 @@
-import React from "react";
+import React , {useState} from "react";
 import "./ListItem.css";
 
 const ListItem = (props) => {
+  const [upvote, setUpvote] = useState(0);
+
+  const upvoteIncrementHandler = () => {
+    setUpvote((prevUpvote) => prevUpvote + 1);
+  };
 
   const deleteHandler = () => {
     props.onDelete(props.id);
@@ -11,7 +16,7 @@ const ListItem = (props) => {
     <li>
       {props.children}
       <div className="list--button">
-        <button>Upvote</button>
+        <button onClick={upvoteIncrementHandler}>+{upvote}</button>
         <button onClick={deleteHandler}>Delete</button>
       </div>
     </li>
