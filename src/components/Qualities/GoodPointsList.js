@@ -1,7 +1,8 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import Input from "../UI/Input";
+import ListItem from "../UI/ListItem";
 
-const GoodPointList = () => {
+const GoodPointsList = () => {
   const [showInput, setShowInput] = useState(false);
   const [data, setData] = useState([]);
 
@@ -16,18 +17,34 @@ const GoodPointList = () => {
     });
   };
 
+  const onDeleteHandler = (Id) => {
+    setData((prevData) => {
+      return prevData.filter((items) => items.id !== Id);
+    });
+  };
+
   return (
     <>
       <h2>
         What went well
-        <button className="btn-red" onClick={showInputHandler}>
+        <button className="btn" onClick={showInputHandler}>
           +
         </button>
       </h2>
-      {showInput && <Input onGetData={dataHandler}/>}
-      <ul className="improve--list"></ul>
+      {showInput && <Input onGetData={dataHandler} />}
+      <ul className="goodpoint--list">
+        {data.map((dataItems) => (
+          <ListItem
+            key={dataItems.id}
+            id={dataItems.id}
+            onDelete={onDeleteHandler}
+          >
+            {dataItems.title}
+          </ListItem>
+        ))}
+      </ul>
     </>
   );
 };
 
-export default GoodPointList;
+export default GoodPointsList;
