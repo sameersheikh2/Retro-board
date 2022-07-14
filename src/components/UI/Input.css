@@ -1,0 +1,24 @@
+.form input {
+    padding: 6px;
+    border-radius: 11px;
+    border: 1px solid black;
+    outline: none;
+}
+.form input:focus {
+    background-color: rgb(209, 209, 209);
+}
+
+.form-btn {
+  margin: 4px;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 7px;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+    background-color: black;
+    color: white;
+}
