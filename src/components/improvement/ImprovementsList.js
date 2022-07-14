@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../UI/Input";
 import ListItem from "../UI/ListItem";
+import "./ImprovementsList.css";
 
 const ImprovementsList = () => {
   const [showInput, setShowInput] = useState(false);
