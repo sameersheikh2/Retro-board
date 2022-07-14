@@ -1,4 +1,5 @@
 import React , {useState} from 'react'
+import './Input.css'
 
 const Input = (props) => {
   const [inputData , setInputData] = useState();
