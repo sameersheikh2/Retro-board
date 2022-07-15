@@ -24,6 +24,12 @@ const GoodPointsList = () => {
     });
   };
 
+  const onUpvoteIncrementHandler = (id) =>{
+    setData((prevData)=>{
+      return prevData.map((items)=> (items.id === id ? {...items , value: 1} : items))
+    })
+  }
+
   return (
     <>
       <h2>
@@ -39,6 +45,8 @@ const GoodPointsList = () => {
             key={dataItems.id}
             id={dataItems.id}
             onDelete={onDeleteHandler}
+            value = {dataItems.value}
+            onUpvote = {onUpvoteIncrementHandler}
           >
             {dataItems.title}
           </ListItem>
