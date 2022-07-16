@@ -6,6 +6,7 @@ import "./GoodPointList.css";
 const GoodPointsList = () => {
   const [showInput, setShowInput] = useState(false);
   const [data, setData] = useState([]);
+  const [editTitle, setEditTitle] = useState(false);
 
   const showInputHandler = () => {
     setShowInput(!showInput);
@@ -24,10 +25,8 @@ const GoodPointsList = () => {
     });
   };
 
-  const onUpvoteIncrementHandler = (id) =>{
-    setData((prevData)=>{
-      return prevData.map((items)=> (items.id === id ? {...items , value: 1} : items))
-    })
+  const editTitleHandler = (id)=>{
+      setEditTitle(!editTitle)
   }
 
   return (
@@ -45,10 +44,10 @@ const GoodPointsList = () => {
             key={dataItems.id}
             id={dataItems.id}
             onDelete={onDeleteHandler}
-            value = {dataItems.value}
-            onUpvote = {onUpvoteIncrementHandler}
+            onEdit={editTitleHandler}
           >
             {dataItems.title}
+            {editTitle && <input value={dataItems.title} type='text'/>}
           </ListItem>
         ))}
       </ul>
