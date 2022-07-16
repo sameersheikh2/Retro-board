@@ -12,16 +12,11 @@ const ListItem = (props) => {
     props.onDelete(props.id);
   };
 
-  const editHandler = () =>{
-    props.onEdit(props.id)
-  }
-
   return (
     <li>
       {props.children}
       <div className="list--button">
         <button onClick={upvoteIncrementHandler}>+{upvote}</button>
-        <button onClick={editHandler}>Edit</button>
         <button onClick={deleteHandler}>Delete</button>
       </div>
     </li>

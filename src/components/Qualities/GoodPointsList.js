@@ -6,7 +6,6 @@ import "./GoodPointList.css";
 const GoodPointsList = () => {
   const [showInput, setShowInput] = useState(false);
   const [data, setData] = useState([]);
-  const [editTitle, setEditTitle] = useState(false);
 
   const showInputHandler = () => {
     setShowInput(!showInput);
@@ -25,10 +24,6 @@ const GoodPointsList = () => {
     });
   };
 
-  const editTitleHandler = (id)=>{
-      setEditTitle(!editTitle)
-  }
-
   return (
     <>
       <h2>
@@ -44,10 +39,8 @@ const GoodPointsList = () => {
             key={dataItems.id}
             id={dataItems.id}
             onDelete={onDeleteHandler}
-            onEdit={editTitleHandler}
           >
             {dataItems.title}
-            {editTitle && <input value={dataItems.title} type='text'/>}
           </ListItem>
         ))}
       </ul>
